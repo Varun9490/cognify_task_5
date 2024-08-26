@@ -1,0 +1,53 @@
+/* Dark aurora gradient theme styles with Tailwind CSS */
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+header h1 {
+  @apply text-3xl font-bold;
+}
+
+header p {
+  @apply text-xl mt-2;
+}
+
+form {
+  @apply bg-gray-800 p-6 rounded-lg shadow-lg;
+}
+
+input,
+button {
+  @apply mt-1 p-2 w-full rounded-md border-gray-600 bg-gray-900 text-gray-100;
+}
+
+input:focus,
+button:hover {
+  @apply focus:border-blue-500 focus:ring focus:ring-blue-500;
+}
+
+button {
+  @apply bg-blue-500 text-white px-4 py-2 rounded-md;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  @apply bg-blue-600;
+  transform: scale(1.05);
+}
+
+ul {
+  @apply list-disc pl-5;
+}
+
+li {
+  @apply bg-gray-800 p-4 rounded-md mb-2 shadow-md;
+  transition: transform 0.3s;
+}
+
+li:hover {
+  @apply transform scale-105;
+}
+
+.hidden {
+  display: none;
+}

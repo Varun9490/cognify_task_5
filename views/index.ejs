@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Integration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/styles.css" />
+    <script defer src="/script.js"></script>
+  </head>
+  <body class="bg-gradient-to-r from-gray-900 to-gray-700 text-gray-200">
+    <header class="bg-gray-800 text-white text-center py-6">
+      <h1 class="text-3xl font-bold">API Integration Project</h1>
+      <p class="text-xl mt-2">
+        Interact with our API through this front-end interface.
+      </p>
+    </header>
+
+    <main class="container mx-auto my-8 px-4">
+      <div class="mb-4">
+        <h2 class="text-2xl font-semibold">Add New Item</h2>
+        <form id="item-form" class="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <input
+            type="text"
+            id="item-name"
+            placeholder="Item Name"
+            class="p-2 w-full rounded-md border-gray-600 bg-gray-900 text-gray-100 focus:border-blue-500 focus:ring focus:ring-blue-500"
+            required
+          />
+          <button
+            type="submit"
+            class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-transform transform hover:scale-105"
+          >
+            Add Item
+          </button>
+        </form>
+      </div>
+
+      <h2 class="text-2xl font-semibold mb-4">Items List</h2>
+      <ul id="items-list" class="list-disc pl-5">
+        <% items.forEach(item => { %>
+        <li
+          class="bg-gray-800 p-4 rounded-md mb-2 shadow-md transition-transform transform hover:scale-105"
+        >
+          <span><%= item.name %></span>
+          <button
+            onclick="deleteItem('<%= item.id %>')"
+            class="ml-4 bg-red-500 text-white px-2 py-1 rounded-md hover:bg-red-600 transition-transform transform hover:scale-105"
+          >
+            Delete
+          </button>
+        </li>
+        <% }); %>
+      </ul>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center py-4">
+      <p>&copy; 2024 API Integration Project. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
